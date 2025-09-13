@@ -11,7 +11,18 @@ const createCategory = async (req: Request, res: Response, next: NextFunction) =
         return res.status(500).json(error)
     }
 }
+const getAllCategory = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        console.log(req.body);
+        const result = await CategoryService.getAllCategory()
+        return res.status(201).json(result)
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error)
+    }
+}
 
 export const CategoryController = {
-    createCategory
+    createCategory,
+    getAllCategory
 }
