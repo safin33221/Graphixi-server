@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { categoryRoute } from "../modules/category/category.route";
 
-const router = Router()
+export const router = Router()
 
 const moduleRoute = [
     {
@@ -10,6 +10,6 @@ const moduleRoute = [
     }
 ]
 
-moduleRoute.forEach(route => {
+moduleRoute.forEach((route) => {
     router.use(route.path, route.route)
 });
