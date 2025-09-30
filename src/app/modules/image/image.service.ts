@@ -18,7 +18,7 @@ const DeleteImage = async (id: string) => {
     return result
 }
 const UpdateImage = async (id: string, payload: Partial<IImage>) => {
-    const result = await Image.findByIdAndUpdate(id, payload)
+    const result = await Image.findByIdAndUpdate(id, payload, { new: true })
     return result
 }
 
